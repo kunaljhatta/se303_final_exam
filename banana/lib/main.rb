@@ -3,6 +3,14 @@
 # Hint: Let the existing functions use the new code that you
 #       write.
 
+# attr_accessor :split :size :scan
+
+# def initialize(split, size, scan)
+#   @split = split 
+#   @size = size
+#   @scan = scan
+# end 
+
 def word_count(beginning, middle, conclusion)
   beginning.split.size +
   middle.split.size +
