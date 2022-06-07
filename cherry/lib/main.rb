@@ -15,13 +15,6 @@ def total_and_smallest
   [total, smallest]
 end
 
-data.each do |d|
-  total += d
-  if d < smallest
-    smallest = d
-  end
-[total, smallest]
-
 
 
 # Apply the "replace loop with pipeline" refactoring.

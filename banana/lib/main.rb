@@ -1,28 +1,27 @@
-# These three functions suffer from the "Data Clump" smell.
-# Cure the smell, and keep the test green and unchanged.
-# Hint: Let the existing functions use the new code that you
-#       write.
-
-# attr_accessor :split :size :scan
-
-# def initialize(split, size, scan)
-#   @split = split 
-#   @size = size
-#   @scan = scan
-# end 
+class Phrase
+  attr_reader :beginning, :middle, :conclusion
+  def initialize(beginning, middle, conclusion)
+    @beginning = beginning
+    @middle = middle
+    @conclusion = conclusion
+  end
+end
 
 def word_count(beginning, middle, conclusion)
-  beginning.split.size +
-  middle.split.size +
-  conclusion.split.size
+  phrase = Phrase.new(beginning, middle, conclusion)
+  phrase.beginning.split.size +
+  phrase.middle.split.size +
+  phrase.conclusion.split.size
 end
 
 def letter_count(beginning, middle, conclusion)
-  beginning.size + middle.size + conclusion.size
+  phrase = Phrase.new(beginning, middle, conclusion)
+  phrase.beginning.size + phrase.middle.size + phrase.conclusion.size
 end
 
 def period_count(beginning, middle, conclusion)
-  beginning.scan(/\./).size +
-  middle.scan(/\./).size +
-  conclusion.scan(/\./).size
+  phrase = Phrase.new(beginning, middle, conclusion)
+  phrase.beginning.scan(/\./).size +
+  phrase.middle.scan(/\./).size +
+  phrase.conclusion.scan(/\./).size
 end
